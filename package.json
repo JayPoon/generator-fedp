@@ -1,6 +1,6 @@
 {
   "name": "generator-fedp",
-  "version": "0.3.9",
+  "version": "0.4.0",
   "description": "A front-end project initialization generator for Yeoman",
   "keywords": [
     "generator-fedp"
@@ -21,13 +21,13 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.14.0"
+    "yeoman-generator": "~0.17.1"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "mocha": "~1.20.1"
   },
   "peerDependencies": {
-    "yo": ">=1.0.0"
+    "yo": ">=1.2.0"
   },
   "engines": {
     "node": ">=0.10.0",

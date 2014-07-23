@@ -6,16 +6,19 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       options: {
+        stripBanners: true,
+        banner: '/*! \n<%= pkg.name %>-<%= pkg.version %> \nDescription: <%= pkg.description %>\nAuthor: <%= pkg.author %>\nDate: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> \n*/\n',
         separator: ';'
       },
       dist: {
-        src: ['src/js/*.js'],
+        src: ['dist/js/min/*.js'],
         dest: 'dist/js/<%= pkg.name %>-<%= pkg.version %>.js'
       }
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %>-<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n',
+        banner: '/* \n<%= pkg.name %>-<%= pkg.version %> \nDescription: <%= pkg.description %>\nAuthor: <%= pkg.author %>\nDate: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> \n*/\n',
+        footer:'\n',
         beautify: {
           ascii_only: true
         },
@@ -27,9 +30,12 @@ module.exports = function(grunt) {
         }
       },
       dist: {
-        files: {
-          'dist/js/<%= pkg.name %>-<%= pkg.version %>.min.js': ['<%= concat.dist.dest %>']
-        }
+        files: [{
+            expand: true,
+            cwd: 'src/js',
+            src: '*.js',
+            dest: 'dist/js/min'
+        }]
       }
     },
     qunit: {
@@ -45,7 +51,7 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         files: {
-          'dist/css/<%= pkg.name %>-<%= pkg.version %>.min.css': [ 'src/css/*.css' ]
+          'dist/css/<%= pkg.name %>.min.css': [ 'src/css/*.css' ]
         }
       }
     },
@@ -96,8 +102,8 @@ module.exports = function(grunt) {
       }
     }
   });
-
-  grunt.registerTask('build', ['test','coffee','concat','uglify','cssmin','copy','yuidoc']);
+  //'coffee', are not registered by default.
+  grunt.registerTask('build', ['test','uglify','concat','cssmin','copy','yuidoc']);
 
   grunt.registerTask('test', ['jshint', 'qunit']);
 

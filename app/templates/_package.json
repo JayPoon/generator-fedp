@@ -1,8 +1,13 @@
 {
-  "name": "new-proj",
-  "version": "0.0.1",
+  "name": "project",
+  "version": "1.0.0",
   "description": "a new project",
+  "author": "",
   "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
@@ -18,6 +23,6 @@
     "matchdep": "*"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   }
 }

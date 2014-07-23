@@ -42,11 +42,9 @@ fedpGenerator.prototype.app = function app() {
   var _base = this.src._base;
   var _dest = this.src._destBase;
 
-  this.mkdir('bower_components');
   this.directory('demo', 'demo');
   this.directory('dist', 'dist');
   this.mkdir('doc');
-  this.mkdir('node_modules');
   this.directory('src', 'src');
   this.directory('test', 'test');
   console.log('Directories initialization done!');
@@ -56,6 +54,7 @@ fedpGenerator.prototype.app = function app() {
 fedpGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('_jshintrc', '.jshintrc');
   this.copy('_bower.json', 'bower.json');
+  this.copy('_bowerrc', '.bowerrc');
   this.copy('_Gruntfile.js', 'Gruntfile.js');
   this.copy('_package.json', 'package.json');
   this.copy('README.md', 'README.md');
