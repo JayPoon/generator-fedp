@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "A front-end project initialization generator for Yeoman",
   "keywords": [
-    "generator-fedp"
+    "yeoman-generator","generator","front-end","development","scaffold"
   ],
   "homepage": "https://github.com/hiwanz/generator-fedp",
   "bugs": "https://github.com/hiwanz/generator-fedp/issues",
