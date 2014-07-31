@@ -23,19 +23,17 @@ fedpGenerator.prototype.askFor = function askFor() {
   // have Yeoman greet the user.
   console.log(this.yeoman);
 
-  // var prompts = [{
-  //   type: 'confirm',
-  //   name: 'someOption',
-  //   message: 'Would you like to enable this option?',
-  //   default: true
-  // }];
+  var prompts = [{
+    type    : 'input',
+    name    : 'name',
+    message : 'Your project name',
+    default : this.appname
+  }];
 
-  // this.prompt(prompts, function (props) {
-  //   this.someOption = props.someOption;
-
-  //   cb();
-  // }.bind(this));
-  cb();
+  this.prompt(prompts, function (props) {
+    this.appname = props.name;    
+    cb();
+  }.bind(this));
 };
 
 fedpGenerator.prototype.app = function app() {
@@ -43,7 +41,9 @@ fedpGenerator.prototype.app = function app() {
   var _dest = this.src._destBase;
 
   this.directory('demo', 'demo');
-  this.directory('dist', 'dist');
+  this.mkdir('dist');
+  this.mkdir('dist/css');
+  this.mkdir('dist/js');
   this.mkdir('doc');
   this.directory('src', 'src');
   this.directory('test', 'test');
@@ -52,10 +52,13 @@ fedpGenerator.prototype.app = function app() {
 };
 
 fedpGenerator.prototype.projectfiles = function projectfiles() {
+  var context = { 
+    name: this.appname 
+  };
   this.copy('_jshintrc', '.jshintrc');
   this.copy('_bower.json', 'bower.json');
   this.copy('_bowerrc', '.bowerrc');
   this.copy('_Gruntfile.js', 'Gruntfile.js');
-  this.copy('_package.json', 'package.json');
   this.copy('README.md', 'README.md');
+  this.template('_package.json', 'package.json', context);
 };

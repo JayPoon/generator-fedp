@@ -1,7 +1,7 @@
 {
-  "name": "project",
-  "version": "1.0.0",
-  "description": "a new project",
+  "name": "<%= name %>",
+  "version": "0.1.0",
+  "description": "a new project named <%= name %>",
   "author": "",
   "dependencies": {},
   "repository": {
