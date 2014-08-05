@@ -1,8 +1,8 @@
 {
   "name": "<%= name %>",
   "version": "0.1.0",
-  "description": "a new project named <%= name %>",
-  "author": "",
+  "description": "a project named <%= name %>",
+  "author": "<%= author %>",
   "dependencies": {},
   "repository": {
     "type": "git",

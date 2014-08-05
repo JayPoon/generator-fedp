@@ -26,12 +26,18 @@ fedpGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     type    : 'input',
     name    : 'name',
-    message : 'Your project name',
+    message : 'Your project name?',
     default : this.appname
+  },{
+    type    : 'input',
+    name    : 'author',
+    message : 'Your name?',
+    default : this.author
   }];
 
   this.prompt(prompts, function (props) {
     this.appname = props.name;    
+    this.author = props.author;    
     cb();
   }.bind(this));
 };
@@ -53,7 +59,8 @@ fedpGenerator.prototype.app = function app() {
 
 fedpGenerator.prototype.projectfiles = function projectfiles() {
   var context = { 
-    name: this.appname 
+    name: this.appname,
+    author: this.author
   };
   this.copy('_jshintrc', '.jshintrc');
   this.copy('_bower.json', 'bower.json');

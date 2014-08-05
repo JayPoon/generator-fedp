@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/* \n<%= pkg.name %>-<%= pkg.version %> \nDescription: <%= pkg.description %>\nAuthor: <%= pkg.author %>\nDate: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> \n*/\n',
+        banner: '/* \nAuthor: <%= pkg.author %>\nDate: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> \n*/\n',
         footer:'\n',
         beautify: {
           ascii_only: true
