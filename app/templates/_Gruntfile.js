@@ -27,6 +27,9 @@ module.exports = function(grunt) {
             'DEBUG': false
           },
           dead_code: true
+        },
+        compress: {
+          drop_console: true
         }
       },
       dist: {
