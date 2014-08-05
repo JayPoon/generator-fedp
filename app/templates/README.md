@@ -6,6 +6,22 @@ fedp的目的是快速构建前端开发项目所需的工具及基础配置，�
 ##前置条件
 系统安装[nodejs](http://nodejs.org/)及Yeoman工作流套件（[Yo](http://yeoman.io/)，[Bower](http://bower.io/)和[Grunt](http://gruntjs.com/)）
 
+##快速开始
+准备好前置条件中的环境及依赖后就可以通过下面的命令安装我们的生成器：
+
+`npm install -g generator-fedp`
+
+安装完成后，可以切换到你的工作目录执行：
+
+`yo fedp`
+
+工具会初始化工作目录框架并自动下载开发所需的依赖包，一切准备就绪后执行`grunt`即可开始工作了。
+
+当然，如果你想在开始工作之前修改和自定义自动化流程，可以在初始化的时候在命令后加`--skip-install`参数，修改完bower配置或Gruntfile后手动执行`bower install`和`npm install`，命令如下：
+
+`yo fedp --skip-install`
+
+
 ## 文件结构说明 ##
 前端开发项目文件初始化结构如下：
 
@@ -69,7 +85,7 @@ README.md：说明文档；
 
 ##配置
 ###bower配置说明
-fedp使用bower来管理第三方库，保存位置在demo/js/lib下（[文件结构说明](https://github.com/hiwanz/generator-fedp/blob/master/app/templates/README.md)），通过bower.json来管理第三方库的依赖及下载，默认情况下只有一个jquery库，初始化的时候可以跳过第三方库和node模块的安装，修改配置后手动运行bower和npm命令在处理这些模块。
+fedp使用bower来管理第三方库，保存位置在demo/js/lib下，通过bower.json来管理第三方库的依赖及下载，默认情况下只有一个jquery库，初始化的时候可以跳过第三方库和node模块的安装，修改配置后手动运行bower和npm命令在处理这些模块。
 ###Grunt配置说明
 如果你是刚接触Grunt的新手可以先学习一下[Grunt入门教程](http://gruntjs.com/getting-started)。
 

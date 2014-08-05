@@ -41,6 +41,8 @@ To initiate the generator without the automatic execution of ```bower``` and ```
 $ yo fedp --skip-install
 ```
 
+Read Chinese version here:[帮助文档](https://github.com/hiwanz/generator-fedp/wiki/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3 "帮助文档")
+
 ### Getting To Know Yeoman
 
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
