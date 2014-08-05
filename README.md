@@ -2,6 +2,7 @@
 
 A front-end project initialization generator for [Yeoman](http://yeoman.io).
 
+Read Chinese version here:[帮助文档](https://github.com/hiwanz/generator-fedp/wiki/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3 "帮助文档")
 
 ## Getting Started
 
@@ -41,7 +42,6 @@ To initiate the generator without the automatic execution of ```bower``` and ```
 $ yo fedp --skip-install
 ```
 
-Read Chinese version here:[帮助文档](https://github.com/hiwanz/generator-fedp/wiki/%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3 "帮助文档")
 
 ### Getting To Know Yeoman
 
