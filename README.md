@@ -34,7 +34,7 @@ $ yo fedp --skip-install
 
 Run `grunt` command and start writing codes in `src` folder,then have fun.
 
-![demonstration](demonstration.gif)
+![demonstration](https://raw.githubusercontent.com/hiwanz/generator-fedp/master/demonstration.gif)
 
 ### Configuration
 
