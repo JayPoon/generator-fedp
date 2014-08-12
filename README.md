@@ -34,11 +34,13 @@ $ yo fedp --skip-install
 
 Run `grunt` command and start writing codes in `src` folder,then have fun.
 
+![demonstration](demonstration.gif)
+
 ### Configuration
 
-`Gruntfile.js` and `bower.json` are the config files.You don't need to configure anything before you start using fedp,cuz they had been configured to meet your basic requirement of development when you initiated the project.
+**Gruntfile.js** and **bower.json** are the config files.You don't need to configure anything before you start using fedp,cuz they had been configured to meet your basic requirement of development when you initiated the project.
 
-If you'd like to get things done better, check out the [Grunt](http://gruntjs.com) and [Bower](http://bower.io) for more infomation,all configurations you need to know are based on them.
+If you'd like to get things done better, check out the [Grunt](http://gruntjs.com) and [Bower](http://bower.io) for more information,all configurations you need to know are based on them.
 
 
 ## License
