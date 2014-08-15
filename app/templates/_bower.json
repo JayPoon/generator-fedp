@@ -1,12 +1,12 @@
 {
-  "name": "jquery",
-  "description": "jQuery components",
+  "name": "jquery-relied-project",
+  "description": "web development with jQuery components",
   "version": "1.0.0",
   "ignore": [
 
   ],
   "dependencies": {
-	   "jquery": "1.10.2"
+	   "jquery": "1.11.1"
   },
   "devDependencies": {
   }
