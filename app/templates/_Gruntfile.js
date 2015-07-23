@@ -11,8 +11,8 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['dist/js/min/*.js'],
-        dest: 'dist/js/<%= pkg.name %>-<%= pkg.version %>.js'
+        src: ['demo/js/tmp/*.js'],
+        dest: 'demo/js/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/js',
             src: '*.js',
-            dest: 'dist/js/min'
+            dest: 'demo/js/tmp'
         }]
       }
     },
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         files: {
-          'dist/css/<%= pkg.name %>.min.css': [ 'src/css/*.css' ]
+          'demo/css/<%= pkg.name %>.min.css': [ 'src/css/*.css' ]
         }
       }
     },
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
       css: {
         cwd: 'src/css',
         src: [ '*.css' ],
-        dest: 'dist/css',
+        dest: 'demo/css',
         expand: true
       }
     },
@@ -90,6 +90,9 @@ module.exports = function(grunt) {
     clean:{
       spm : {
         src: [ '**/.gitignore','**/.npmignore']
+      },
+      tmp : {
+        src : ['demo/js/tmp']
       }
     },
     yuidoc: {
@@ -105,7 +108,7 @@ module.exports = function(grunt) {
     }
   });
   //'coffee', are not registered by default.
-  grunt.registerTask('build', ['test','uglify','concat','cssmin','copy','yuidoc']);
+  grunt.registerTask('build', ['test','uglify','concat','cssmin','copy','yuidoc','clean:tmp']);
 
   grunt.registerTask('test', ['jshint', 'qunit']);
 

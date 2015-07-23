@@ -33,11 +33,17 @@ fedpGenerator.prototype.askFor = function askFor() {
     name    : 'author',
     message : 'Your name?',
     default : this.author
+  },{
+    type    : 'input',
+    name    : 'description',
+    message : 'How do you descripe this project?',
+    default : 'A new project named ' + this.appname
   }];
 
   this.prompt(prompts, function (props) {
     this.appname = props.name;    
-    this.author = props.author;    
+    this.author = props.author;
+    this.description = props.description
     cb();
   }.bind(this));
 };
@@ -47,9 +53,8 @@ fedpGenerator.prototype.app = function app() {
   var _dest = this.src._destBase;
 
   this.directory('demo', 'demo');
-  this.mkdir('dist');
-  this.mkdir('dist/css');
-  this.mkdir('dist/js');
+  this.mkdir('demo/css');
+  this.mkdir('demo/js');
   this.mkdir('doc');
   this.directory('src', 'src');
   this.directory('test', 'test');
@@ -60,7 +65,8 @@ fedpGenerator.prototype.app = function app() {
 fedpGenerator.prototype.projectfiles = function projectfiles() {
   var context = { 
     name: this.appname,
-    author: this.author
+    author: this.author,
+    description: this.description
   };
   this.copy('_jshintrc', '.jshintrc');
   this.copy('_bower.json', 'bower.json');
